@@ -6,6 +6,7 @@ import { UserContext, userData } from './user-context';
 const App = () => {
   const [user, setUser] = useState(userData)
 
+  console.log(user)
 
 
   return (
