@@ -28,5 +28,7 @@ const counterReducer = (state = 0, action) => {
 
 
 export const store = createStore(counterReducer)
-// store.dispatch(incrementAction)
-// console.log(store.getState())
+store.dispatch(incrementActionCreator());
+store.dispatch(decrementActionCreator());
+
+
