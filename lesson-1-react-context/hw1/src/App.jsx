@@ -1,22 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from './Header';
 import { UserContext, userData } from './user-context';
 
 
-const App = () => {
-  const [user, setUser] = useState(userData)
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userData: userData
+    };
+  }
 
-  console.log(user)
+  render() {
 
 
-  return (
-    <UserContext.Provider value={user}>
-      <div className='page'>
-        <Header />
-      </div>
-    </UserContext.Provider>
-
-  );
+    return (
+      <UserContext.Provider value={this.state.userData}>
+        <div className='page'>
+          <Header />
+        </div>
+      </UserContext.Provider>
+    );
+  }
 }
 
 export default App;
