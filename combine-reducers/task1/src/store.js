@@ -5,7 +5,7 @@ import usersReducer from "./users.reducer";
 
 const appReducer = combineReducers({
   counter: counterReducer,
-  users: usersReducer
+  users: usersReducer,
 })
 const store = createStore(appReducer);
 export default store;
