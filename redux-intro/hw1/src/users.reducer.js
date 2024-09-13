@@ -1,5 +1,3 @@
-
-
 export const ADD_USER = 'USER/INCREMENT';
 export const DELETE_USER = 'USER/DECREMENT';
 
@@ -8,6 +6,8 @@ const initialState = {
 }
 
 const userReducer = (state = initialState, action) => {
+  console.log('Action:', action);
+
   switch (action.type) {
     case ADD_USER:
       return {
