@@ -7,6 +7,7 @@ store.subscribe(() => {
   console.log('Store state changed:', store.getState());
 
 })
+store.dispatch(setLanguage('ua'));
 store.dispatch(setUser({ name: 'Georg' }));
 store.dispatch(addProduct({ id: 76, name: 'butter' }));
 store.dispatch(addProduct({ id: 88, name: 'milk' }));
