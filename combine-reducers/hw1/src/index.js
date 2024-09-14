@@ -1,11 +1,17 @@
 import store from './store.js';
-import { addUser, deleteUser } from './users.actions';
+import { setUser, removeUser } from './user.actions.js';
+import { addProduct, removeProduct } from './cart.actions.js';
+import { setLanguage } from './language.actions.js';
 
 store.subscribe(() => {
-  console.log('Store state updated:', store.getState());
-});
+  console.log('Store state changed:', store.getState());
 
-store.dispatch(addUser({ id: 76, name: 'Sarah' }));
-store.dispatch(addUser({ id: 77, name: 'John' }));
+})
+store.dispatch(setUser({ name: 'Georg' }));
+store.dispatch(addProduct({ id: 76, name: 'butter' }));
+store.dispatch(addProduct({ id: 88, name: 'milk' }));
+store.dispatch(removeProduct(76));
+store.dispatch(removeUser());
 
-store.dispatch(deleteUser(76));
+
+
