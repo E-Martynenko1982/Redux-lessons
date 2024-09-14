@@ -5,6 +5,8 @@ const initialState = {
 }
 
 export const languageReducer = (state = initialState, action) => {
+
+
   switch (action.type) {
     case LANGUAGE:
       return {
