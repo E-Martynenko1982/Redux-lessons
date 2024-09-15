@@ -4,9 +4,9 @@ import User from './User';
 const UsersList = ({ users }) => {
   return (
     <div>
-      <ul>
+      <ul className="users">
         {users.map(user => (
-          <li key={user.id}>
+          <li key={user.id} className="user">
             <User name={user.name} age={user.age} />
           </li>
         ))}

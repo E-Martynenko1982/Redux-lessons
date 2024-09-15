@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import { Provider } from 'react-redux';
 import store from './store';
 import App from "./App";
-import { setUsers } from './user.actions'; // Импортируем экшен
+import { setUsers } from './user.actions';
 import './index.scss';
 
 const users = [
@@ -21,9 +21,8 @@ const users = [
   { id: 'id-10', age: 45, name: 'Anna' },
 ];
 
-// Диспатчим список пользователей в store при старте приложения
-store.dispatch(setUsers(users)); // Используем экшен из actions.js
-
+// Диспатчімо список користувачів у store при старті програми
+store.dispatch(setUsers(users));
 const rootElement = document.querySelector('#root');
 ReactDOM.render(
   <Provider store={store}>
