@@ -17,7 +17,7 @@ const userReducer = (state = initialState, action) => {
       });
       return {
         ...state,
-        userList: newList,
+        usersList: newList,
       }
     default:
       return state
