@@ -2,20 +2,13 @@ import React from "react";
 import User from './User';
 import { connect } from "react-redux";
 import Pagination from "./Pagination.jsx";
-import { setPage } from './user.actions.js';
+import { goNext, goPrev } from './user.actions.js';
 
-const UsersList = ({ users, currentPage, setPage }) => {
+const UsersList = ({ users, goNext, goPrev, currentPage, }) => {
   const itemsPerPage = 3;
   const startIndex = currentPage * itemsPerPage;
   const displayedUsers = users.slice(startIndex, startIndex + itemsPerPage);
 
-  const goPrev = () => {
-    setPage(currentPage - 1)
-  };
-
-  const goNext = () => {
-    setPage(currentPage + 1)
-  };
 
   return (
     <div>
@@ -42,7 +35,8 @@ const mapState = state => ({
 })
 
 const mapDispatch = {
-  setPage
+  goNext,
+  goPrev,
 }
 
 export default connect(mapState, mapDispatch)(UsersList);
