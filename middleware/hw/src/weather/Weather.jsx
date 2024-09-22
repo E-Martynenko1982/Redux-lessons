@@ -10,6 +10,8 @@ class Weather extends Component {
   }
 
   render() {
+    console.log(this.props)
+
     const { weatherData } = this.props;
 
     return (
