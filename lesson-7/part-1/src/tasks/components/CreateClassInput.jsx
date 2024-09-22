@@ -19,7 +19,11 @@ class CreateClassInput extends React.Component {
 
     return (
       <div className='create-task'>
-        <input type="text" value={this.state.value}
+        <input
+          id="taskInput" // Добавлен уникальный id
+          name="taskInput" // Добавлено уникальное имя для поддержки автозаполнения
+          type="text"
+          value={this.state.value}
           onChange={this.handleChange}
           className="create-task__input" />
         <button className='btn create-task__btn'
