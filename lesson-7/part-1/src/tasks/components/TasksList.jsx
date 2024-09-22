@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Task from '../../Task';
 import CreateClassInput from './CreateClassInput';
 import * as tasksAction from '../tasks.actions';
-import { tasksListSelector } from '../tasks.selectors';
+import { sortedTasksListSelector } from '../tasks.selectors';
 
 
 class TasksList extends Component {
@@ -14,16 +14,14 @@ class TasksList extends Component {
   }
 
   render() {
-    const sortedList = this.props.tasks
-      .slice()
-      .sort((a, b) => a.done - b.done)
+
     return (
       <>
         <h1 className='title'>Todo List</h1>
         <div className="todo-list">
           <CreateClassInput onCreate={this.props.createTask} />
           <ul className='list'>
-            {sortedList.map((task) => (
+            {this.props.tasks.map((task) => (
               <Task key={task.id}
                 {...task}
                 id={Number(task.id)}
@@ -58,7 +56,7 @@ const mapDispatch = {
 
 const mapState = state => {
   return {
-    tasks: tasksListSelector(state)
+    tasks: sortedTasksListSelector(state)
   }
 }
 
